@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { removeData, retrieveData, TOKENID, USERDATA } from './localStorage';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'http://localhost:3030';
 
 export { getRessources, getRessource, login, logout, updateRessource, createRessource, deleteRessource };
 
@@ -12,6 +12,7 @@ function getRessources(name) {
 
 function getRessource(name, id) {
     const url = `${BASE_URL}/${name}/${id}`;
+    console.log("URL: ", url)
     return axios.get(url).then((response) => response.data);
 }
 
