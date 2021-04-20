@@ -1,0 +1,28 @@
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from './Header'
+import Home from '../screens/Home'
+import Footer from './Footer'
+import PostPage from '../screens/PostPage';
+import AdminLogin from '../screens/AdminLogin';
+import AdminPage from '../screens/AdminPage';
+import AdminPostPage from '../screens/AdminPostPage';
+import Navbar from './Navbar';
+
+export default function AppRouter(props) {
+    return (
+        <Router>
+            <Header/>
+            <Navbar isLogin={ props.user !== null }/>
+            <Switch>
+                <Route path="/addPost" children={ <AdminPostPage/> }/>
+                <Route path="/editPost/:id" children={ <AdminPostPage/> }/>
+                <Route path="/post/:id" children={ <PostPage/> }/>
+                <Route path="/admin" children={ <AdminPage/> }/>
+                <Route path="/login" children={ <AdminLogin/> }/>
+                <Route path="/" children={ <Home/> }/>
+            </Switch>
+            <Footer/>
+        </Router>
+    )
+}
