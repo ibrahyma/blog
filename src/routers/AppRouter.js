@@ -19,6 +19,7 @@ export default function AppRouter(props) {
                 <Route path="/addPost" children={ <AdminPostPage/> }/>
                 <Route path="/addCategory" children={ <AdminCategoryPage/> }/>
                 <Route path="/editPost/:id" children={ <AdminPostPage/> }/>
+                <Route path="/editCategory/:id" children={ <AdminCategoryPage/> }/>
                 <Route path="/post/:id" children={ <PostPage/> }/>
                 <Route path="/admin" children={ <AdminPage/> }/>
                 <Route path="/login" children={ <AdminLogin/> }/>
