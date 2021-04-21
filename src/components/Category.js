@@ -25,15 +25,16 @@ export default class Category extends Component {
             return null
         }
         
-        const { _id, title, description, image, content } = this.state
-    
+        const { _id, title, description, image } = this.state
+        const DEFAULT_IMG = "https://www.phoca.cz/images/projects/phoca-gallery-r.png"
+        
         return (
             <div className="card">
             {
                 <a href={ `/category/${ _id }` }>
                     { title && (<h2>{ title }</h2>) }
                     { description && (<h5>{ description }</h5>) }
-                    { image && (<img src={ image } alt="categoryImage" style={{ height: "200px" }}/>) }
+                    <img src={ image !== "" ? image : DEFAULT_IMG } alt="categoryImage"/>
                 </a>
             }
             </div>

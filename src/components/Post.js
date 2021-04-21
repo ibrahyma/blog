@@ -26,6 +26,7 @@ export default class Post extends Component {
         }
         
         const { _id, title, description, image, content } = this.state
+        const DEFAULT_IMG = "https://www.phoca.cz/images/projects/phoca-gallery-r.png"
     
         return (
             <div className="card">
@@ -33,7 +34,7 @@ export default class Post extends Component {
                 <a href={ `/post/${ _id }` }>
                     { title && (<h2>{ title }</h2>) }
                     { description && (<h5>{ description }</h5>) }
-                    { image && (<img src={ image } alt="postImage" style={{ height: "200px" }}/>) }
+                    <img src={ image !== "" ? image : DEFAULT_IMG } alt="postImage"/>
                     { content && (<p>{ content }</p>) }
                 </a>
             }

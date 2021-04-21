@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { createRessource, deleteRessource, getRessource, updateRessource } from '../services/api_service'
+import { retrieveData, TOKENID } from "../services/localStorage";
 
 export default class CategoryForm extends Component {
     state = {
@@ -9,6 +10,10 @@ export default class CategoryForm extends Component {
     }
 
     componentDidMount() {
+        if (!retrieveData(TOKENID)) {
+            window.location = "/login"
+        }
+
         if (this.props.itemId) {
             getRessource("category", this.props.itemId)
                 .then(category => this.setState({ ...this.state, ...category }))

@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { createRessource, deleteRessource, getRessource, getRessources, updateRessource } from '../services/api_service'
+import { retrieveData, TOKENID } from "../services/localStorage";
 
 
 export default class PostForm extends Component {
@@ -12,6 +13,10 @@ export default class PostForm extends Component {
     }
 
     componentDidMount() {
+        if (!retrieveData(TOKENID)) {
+            window.location = "/login"
+        }
+        
         if (this.props.itemId) {
             getRessource("post", this.props.itemId)
                 .then(post => this.setState({ ...this.state, ...post }))
