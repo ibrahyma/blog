@@ -32,10 +32,18 @@ export default class LoginForm extends Component {
         const { username, password } = this.state
         
         return (
-            <div>
-                <input type="text" placeholder="username" name="username" value={ username } onChange={ this.onChange.bind(this) }/>
-                <input type="password" placeholder="password" name="password" value={ password } onChange={ this.onChange.bind(this) }/>
-                <button onClick={ this.connectUser.bind(this) }>Login</button>
+            <div className="form">
+                <div className="form__field">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="username" name="username" value={ username } onChange={ this.onChange.bind(this) }/>
+                </div>
+                <div className="form__field">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="password" name="password" value={ password } onChange={ this.onChange.bind(this) }/>
+                </div>
+                <div className="form__field">
+                    <button onClick={ this.connectUser.bind(this) }>Login</button>
+                </div>
             </div>
         )
     }

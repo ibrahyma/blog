@@ -25,7 +25,7 @@ export default class Post extends Component {
             return null
         }
         
-        const { _id, title, description, image, content } = this.state
+        const { _id, title, title_description, image, content } = this.state
         const DEFAULT_IMG = "https://www.phoca.cz/images/projects/phoca-gallery-r.png"
     
         return (
@@ -33,7 +33,7 @@ export default class Post extends Component {
             {
                 <a href={ `/post/${ _id }` }>
                     { title && (<h2>{ title }</h2>) }
-                    { description && (<h5>{ description }</h5>) }
+                    { title_description && (<h5>{ title_description }</h5>) }
                     <img src={ image !== "" ? image : DEFAULT_IMG } alt="postImage"/>
                     { content && (<p>{ content }</p>) }
                 </a>
