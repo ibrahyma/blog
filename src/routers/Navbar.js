@@ -18,21 +18,20 @@ export default class Navbar extends Component {
                     </li>
                     {
                         this.props.isLogin ? [
-                            <li style={{ position: "absolute", right: "30%", borderLeft: "5px solid #f1f1f1" }}>
+                            <li>
                                 <Link to="/admin">Admin</Link>
                             </li>,
-                            <li style={{ position: "absolute", right: "20%", borderLeft: "5px solid #f1f1f1" }}>
+                            <li>
                                 <Link to="/addPost">New post</Link>
                             </li>,
-                            <li style={{ position: "absolute", right: "10%", borderLeft: "5px solid #f1f1f1" }}>
+                            <li>
                                 <Link to="/addCategory">New category</Link>
                             </li>,
-                            <li
-                                style={{ position: "absolute", right: "15px", borderLeft: "5px solid #f1f1f1", cursor: "pointer" }}>
-                                <div onClick={ this.onLogout.bind(this) }>Logout</div>
+                            <li>
+                                <div style={{ cursor: "pointer" }} onClick={ this.onLogout.bind(this) }>Logout</div>
                             </li>
                         ] : (
-                            <li style={{ position: "absolute", right: "15px", borderLeft: "5px solid #f1f1f1" }}>
+                            <li>
                                 <Link to="/login">login</Link>
                             </li>
                         )

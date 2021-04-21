@@ -54,7 +54,7 @@ export default class PostForm extends Component {
         
         return [
             this.props.itemId && <button onClick={ this.onDelete.bind(this) }>Delete post</button>,
-            <div className="formPost">
+            <div className="form">
                 <select name="category">
                 {
                     categories.map(category => <option value={ category.id }>{ category.title }</option>)

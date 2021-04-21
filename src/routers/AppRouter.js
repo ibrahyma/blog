@@ -9,6 +9,7 @@ import AdminPage from '../screens/AdminPage';
 import AdminPostPage from '../screens/AdminPostPage';
 import Navbar from './Navbar';
 import AdminCategoryPage from '../screens/AdminCategoryPage';
+import CategoryPage from '../screens/CategoryPage';
 
 export default function AppRouter(props) {
     return (
@@ -21,6 +22,7 @@ export default function AppRouter(props) {
                 <Route path="/editPost/:id" children={ <AdminPostPage/> }/>
                 <Route path="/editCategory/:id" children={ <AdminCategoryPage/> }/>
                 <Route path="/post/:id" children={ <PostPage/> }/>
+                <Route path="/category/:id" children={ <CategoryPage/> }/>
                 <Route path="/admin" children={ <AdminPage/> }/>
                 <Route path="/login" children={ <AdminLogin/> }/>
                 <Route path="/" children={ <Home/> }/>

@@ -48,7 +48,7 @@ export default class CategoryForm extends Component {
         
         return [
             this.props.itemId && <button onClick={ this.onDelete.bind(this) }>Delete category</button>,
-            <div className="formPost">
+            <div className="form">
                 <input type="text" placeholder="title" name="title" value={ title } onChange={ this.onChange.bind(this) }/>
                 <input type="text" placeholder="image" name="image" value={ image } onChange={ this.onChange.bind(this) }/>
                 <input type="text" placeholder="description" name="description" value={ description } onChange={ this.onChange.bind(this) }/>

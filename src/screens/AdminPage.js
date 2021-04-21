@@ -34,21 +34,23 @@ export default class AdminPage extends Component {
         const { posts, categories } = this.state
 
         return [
-            <h2>Admin</h2>,
+            <h1>Admin</h1>,
             <div className="row">
                 <div className="leftcolumn">
-                {
-                    categories.map((post, index) => (
-                        <CategoryAdmin key={ index } itemId={ post._id }/>
-                    ))
-                }
+                    <h2>Categories</h2>
+                    {
+                        categories.map((post, index) => (
+                            <CategoryAdmin key={ index } itemId={ post._id }/>
+                        ))
+                    }
                 </div>
                 <div className="rightcolumn">
-                {
-                    posts.map((post, index) => (
-                        <PostAdmin key={ index } itemId={ post._id }/>
-                    ))
-                }
+                    <h2>Posts</h2>
+                    {
+                        posts.map((post, index) => (
+                            <PostAdmin key={ index } itemId={ post._id }/>
+                        ))
+                    }
                 </div>
             </div>
         ]

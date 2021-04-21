@@ -1,26 +1,30 @@
-nav{
-    background-color: white;
+nav {
+    background-color: #303030;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-nav ul{
+nav ul {
     list-style-type: none;
     display: flex;
+    justify-content: space-between;
     margin: 0px;
     padding: 0px;
 }
 
-nav ul li{
+nav ul li {
     padding: 10px;
-    border-right: 5px solid #f1f1f1;
 }
 
-nav ul li a{
-    text-decoration: none;
-    color: black;
+nav ul li:not(:first-child) {
+    border-left: 5px solid black;
 }
 
-nav ul li a:hover{
-    color: blue;
+nav ul li:not(:last-child) {
+    border-right: 5px solid black;
+}
+
+nav ul li:hover,
+nav ul li a:hover {
+    color: #60C0FF;
 }
