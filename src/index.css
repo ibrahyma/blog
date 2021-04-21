@@ -4,6 +4,11 @@ body {
     background: #f1f1f1;
 }
 
+img {
+    height: 200px;
+    width: 200px;
+}
+
 .header {
     padding: 30px;
     font-size: 40px;
@@ -31,6 +36,10 @@ body {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
+}
+
+.row {
+    display: flex;
 }
 
 .row:after {

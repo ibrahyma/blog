@@ -1,11 +1,13 @@
 import { Component } from "react"
+import CategoryAdmin from "../components/CategoryAdmin"
 import PostAdmin from "../components/PostAdmin"
 import { getRessources } from '../services/api_service'
 import { retrieveData, TOKENID } from "../services/localStorage"
 
 export default class AdminPage extends Component {
     state = {
-        posts: []
+        posts: [],
+        categories: []
     }
 
     componentDidMount() {
@@ -20,16 +22,29 @@ export default class AdminPage extends Component {
                 this.setState({ posts: res }) 
             })
             .catch(err => console.log(`Error: ${err}`))
+
+        getRessources("category")
+            .then(res => {
+                this.setState({ categories: res }) 
+            })
+            .catch(err => console.log(`Error: ${err}`))
     }
 
     render() {
-        const { posts } = this.state
+        const { posts, categories } = this.state
 
-        return (
+        return [
+            <h2>Admin</h2>,
+            <a href="/addCategory">Add category</a>,
             <div className="row">
-                <h2>Admin</h2>
-                <a href="/addCategory">Add category</a>
                 <div className="leftcolumn">
+                {
+                    categories.map((post, index) => (
+                        <CategoryAdmin key={ index } itemId={ post._id }/>
+                    ))
+                }
+                </div>
+                <div className="rightcolumn">
                 {
                     posts.map((post, index) => (
                         <PostAdmin key={ index } itemId={ post._id }/>
@@ -37,7 +52,7 @@ export default class AdminPage extends Component {
                 }
                 </div>
             </div>
-        )
+        ]
     } 
     
 }
