@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { createRessource, getRessource, getRessources, updateRessource } from '../services/api_service'
+import { createRessource, deleteRessource, getRessource, getRessources, updateRessource } from '../services/api_service'
 
 
 export default class PostForm extends Component {
@@ -40,10 +40,20 @@ export default class PostForm extends Component {
             .then(() => window.location = '/admin')
     }
 
+    onDelete() {
+        if (!window.confirm(`Confirm delete ?`)) {
+            return
+        }
+
+        deleteRessource('post', this.props.itemId)
+            .then(() => window.location = '/admin')
+    }
+
     render() {
         const { title, title_description, image, content, categories } = this.state
         
-        return (
+        return [
+            this.props.itemId && <button onClick={ this.onDelete.bind(this) }>Delete post</button>,
             <div className="formPost">
                 <select name="category">
                 {
@@ -56,6 +66,6 @@ export default class PostForm extends Component {
                 <textarea placeholder="content" name="content" value={ content } onChange={ this.onChange.bind(this) }></textarea>
                 <button onClick={ this.onSave.bind(this) }>Save</button>
             </div>
-        )
+        ]
     }
 }

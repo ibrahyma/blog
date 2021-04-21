@@ -35,7 +35,6 @@ export default class AdminPage extends Component {
 
         return [
             <h2>Admin</h2>,
-            <a href="/addCategory">Add category</a>,
             <div className="row">
                 <div className="leftcolumn">
                 {

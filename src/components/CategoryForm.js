@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { createRessource, getRessource, updateRessource } from '../services/api_service'
+import { createRessource, deleteRessource, getRessource, updateRessource } from '../services/api_service'
 
 export default class CategoryForm extends Component {
     state = {
@@ -20,6 +20,15 @@ export default class CategoryForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    onDelete() {
+        if (!window.confirm(`Confirm delete ?`)) {
+            return
+        }
+
+        deleteRessource('category', this.props.itemId)
+            .then(() => window.location = '/admin')
+    }
+
     onSave() {
         const { title, image, description } = this.state
         const data = { title, image, description }
@@ -37,13 +46,14 @@ export default class CategoryForm extends Component {
     render() {
         const { title, image, description } = this.state
         
-        return (
+        return [
+            this.props.itemId && <button onClick={ this.onDelete.bind(this) }>Delete category</button>,
             <div className="formPost">
                 <input type="text" placeholder="title" name="title" value={ title } onChange={ this.onChange.bind(this) }/>
                 <input type="text" placeholder="image" name="image" value={ image } onChange={ this.onChange.bind(this) }/>
                 <input type="text" placeholder="description" name="description" value={ description } onChange={ this.onChange.bind(this) }/>
                 <button onClick={ this.onSave.bind(this) }>Save</button>
             </div>
-        )
+        ]
     }
 }
