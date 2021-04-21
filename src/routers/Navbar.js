@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { logout } from '../services/api_service'
+import { retrieveData, TOKENID } from "../services/localStorage";
 import './Navbar.css';
 
 export default class Navbar extends Component {
+    state = {
+        isLogin: false
+    }
+
     onLogout(e) {
         logout()
         window.location = "/"
+    }
+
+    componentDidMount() {
+        this.setState({ isLogin: retrieveData(TOKENID) ? true : false })
     }
 
     render() {
@@ -17,7 +26,7 @@ export default class Navbar extends Component {
                         <Link to="/">Home</Link>
                     </li>
                     {
-                        this.props.isLogin ? [
+                        this.state.isLogin ? [
                             <li>
                                 <Link to="/admin">Admin</Link>
                             </li>,
@@ -32,7 +41,7 @@ export default class Navbar extends Component {
                             </li>
                         ] : (
                             <li>
-                                <Link to="/login">login</Link>
+                                <Link to="/login">Login</Link>
                             </li>
                         )
                     }

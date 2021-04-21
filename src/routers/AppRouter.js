@@ -15,7 +15,7 @@ export default function AppRouter(props) {
     return (
         <Router>
             <Header/>
-            <Navbar isLogin={ props.user !== null }/>
+            <Navbar/>
             <Switch>
                 <Route path="/addPost" children={ <AdminPostPage/> }/>
                 <Route path="/addCategory" children={ <AdminCategoryPage/> }/>
