@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
-const accessTokenSecret = 'bienévidemment'
-const mdp = 'password'
+const accessTokenSecret = 'XXXXX'
+const mdp = 'XXXXX'
 const admin = {
     type: 'Admin',
-    email: 'i.missoma@cfa-insta.fr',
-    firstname: 'Ibrahyma',
-    lastname: 'Missoma'
+    email: 'XXXXX',
+    firstname: 'XXXXX',
+    lastname: 'XXXXX'
 }
 
 exports.getDefaultPassword = () => crypto.createHash("sha512").update(mdp).digest("base64")
