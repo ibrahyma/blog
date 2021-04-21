@@ -28,6 +28,7 @@ export default class AdminPage extends Component {
         return (
             <div className="row">
                 <h2>Admin</h2>
+                <a href="/addCategory">Add category</a>
                 <div className="leftcolumn">
                 {
                     posts.map((post, index) => (

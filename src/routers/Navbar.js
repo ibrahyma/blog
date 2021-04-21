@@ -6,7 +6,7 @@ import './Navbar.css';
 export default class Navbar extends Component {
     onLogout(e) {
         logout()
-            .then(() => window.location = "/")
+        window.location = "/"
     }
 
     render() {
@@ -18,18 +18,15 @@ export default class Navbar extends Component {
                     </li>
                     {
                         this.props.isLogin ? [
-                            <li style={{ position: "absolute", right: "80%", borderLeft: "5px solid #f1f1f1" }}>
+                            <li style={{ position: "absolute", right: "66%", borderLeft: "5px solid #f1f1f1" }}>
                                 <Link to="/admin">Admin</Link>
                             </li>,
-                            <li style={{ position: "absolute", right: "60%", borderLeft: "5px solid #f1f1f1" }}>
+                            <li style={{ position: "absolute", right: "33%", borderLeft: "5px solid #f1f1f1" }}>
                                 <Link to="/addPost">New post</Link>
                             </li>,
-                            <li style={{ position: "absolute", right: "40%", borderLeft: "5px solid #f1f1f1" }}>
-                                <Link to="/category">Categories</Link>
-                            </li>,
                             <li
-                                style={{ position: "absolute", right: "15px", borderLeft: "5px solid #f1f1f1" }}>
-                                <button onClick={ () => this.onLogout.bind(this) }>Logout</button>
+                                style={{ position: "absolute", right: "15px", borderLeft: "5px solid #f1f1f1", cursor: "pointer" }}>
+                                <div onClick={ this.onLogout.bind(this) }>Logout</div>
                             </li>
                         ] : (
                             <li style={{ position: "absolute", right: "15px", borderLeft: "5px solid #f1f1f1" }}>

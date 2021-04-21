@@ -8,6 +8,7 @@ import AdminLogin from '../screens/AdminLogin';
 import AdminPage from '../screens/AdminPage';
 import AdminPostPage from '../screens/AdminPostPage';
 import Navbar from './Navbar';
+import AdminCategoryPage from '../screens/AdminCategoryPage';
 
 export default function AppRouter(props) {
     return (
@@ -16,6 +17,7 @@ export default function AppRouter(props) {
             <Navbar isLogin={ props.user !== null }/>
             <Switch>
                 <Route path="/addPost" children={ <AdminPostPage/> }/>
+                <Route path="/addCategory" children={ <AdminCategoryPage/> }/>
                 <Route path="/editPost/:id" children={ <AdminPostPage/> }/>
                 <Route path="/post/:id" children={ <PostPage/> }/>
                 <Route path="/admin" children={ <AdminPage/> }/>

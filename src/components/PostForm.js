@@ -43,7 +43,6 @@ export default class PostForm extends Component {
     render() {
         const { title, title_description, image, content, categories } = this.state
         
-        console.log("CATEGORIES:", categories)
         return (
             <div className="formPost">
                 <select name="category">

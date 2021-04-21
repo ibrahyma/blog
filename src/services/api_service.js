@@ -21,8 +21,8 @@ function login(data) {
 }
 
 function logout() {
-    removeData(TOKENID);
-    removeData(USERDATA);
+    removeData(TOKENID)
+    removeData(USERDATA)
 }
 
 function updateRessource(name, id, data) {
