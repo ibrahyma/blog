@@ -6,13 +6,12 @@ const BASE_URL = 'http://localhost:3030';
 export { getRessources, getRessource, login, logout, updateRessource, createRessource, deleteRessource };
 
 function getRessources(name) {
-    const url = `${BASE_URL}/${name}`;
-    return axios.get(url).then((response) => response.data);
+    const url = `${BASE_URL}/${name}`
+    return axios.get(url).then((response) => response.data)
 }
 
 function getRessource(name, id) {
     const url = `${BASE_URL}/${name}/${id}`;
-    console.log("URL: ", url)
     return axios.get(url).then((response) => response.data);
 }
 

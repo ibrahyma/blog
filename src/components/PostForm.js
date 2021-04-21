@@ -1,22 +1,26 @@
 import { Component } from "react";
-import { createRessource, getRessource, updateRessource } from '../services/api_service'
+import { createRessource, getRessource, getRessources, updateRessource } from '../services/api_service'
 
 
 export default class PostForm extends Component {
     state = {
-        isEmpty: true,
         title: "",
         title_description: "",
         image: "",
-        content: ""
+        content: "",
+        categories: []
     }
 
     componentDidMount() {
-        if (this.props.itemId.id) {
-            getRessource("post", this.props.itemId.id)
+        if (this.props.itemId) {
+            getRessource("post", this.props.itemId)
                 .then(post => this.setState({ ...this.state, ...post }))
                 .catch(err => console.log("Error: ", err))
         }
+        
+        getRessources("category")
+            .then(categories => this.setState({ ...this.state, categories }))
+            .catch(err => console.log("Error: ", err))
     }
 
     onChange(e) {
@@ -37,10 +41,16 @@ export default class PostForm extends Component {
     }
 
     render() {
-        const { title, title_description, image, content } = this.state
+        const { title, title_description, image, content, categories } = this.state
         
+        console.log("CATEGORIES:", categories)
         return (
             <div className="formPost">
+                <select name="category">
+                {
+                    categories.map(category => <option value={ category.id }>{ category.title }</option>)
+                }
+                </select>
                 <input type="text" placeholder="title" name="title" value={ title } onChange={ this.onChange.bind(this) }/>
                 <input type="text" placeholder="description" name="title_description" value={ title_description } onChange={ this.onChange.bind(this) }/>
                 <input type="text" placeholder="image" name="image" value={ image } onChange={ this.onChange.bind(this) }/>
