@@ -33,10 +33,10 @@ export default class CategoryItem extends Component {
 
         return (
             <div className="categoryItem">
-                <a className="itemLink" href={ itemLink }>
+                <a className="itemLink" href={ itemLink } title={ description }>
                     <img className="itemImage" src={ image || DEFAULT_IMAGE } alt={ title }/>
                     <div className="itemContainer">
-                        <h4><b>{ title }</b></h4>
+                        <h4>{ title }</h4>
                         <p>{ description }</p>
                     </div>
                 </a>
