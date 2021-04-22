@@ -14,6 +14,15 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+    transition: 0.5s;
+}
+
+a:active {
+    color: #4080FF;
+}
+
+a:hover {
+    color: #60C0FF;
 }
 
 .banner {
@@ -33,6 +42,15 @@ a {
     margin-top: 25px;
     text-align: center;
     width: 100%;
+}
+
+.itemLink {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemLink:active {
+    transform: scale(0.9);
 }
 
 .itemImage {
@@ -73,26 +91,29 @@ a {
     z-index: 2;
 }
 
+.pageTitle {
+    font-size: 28px;
+}
+
 .pageTitle::first-letter {
-    border-bottom: 5px solid #808080;
+    border-bottom: 7px solid #808080;
     padding-bottom: 3px;
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+.warning {
+    background: #FF8080;
+    color: #804040;
+    padding: 10px;
+    width: 100%;
+}
 
-    .itemImage {
-        height: 100px;
-        width: 100px;
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+    .pageTitle {
+        font-size: 34px;
     }
 }
 
 @media only screen and (min-width : 1024px) {
-
-    .itemImage {
-        height: 200px;
-        width: 200px;
-    }
-
     .pageTitle {
         font-size: 40px;
     }

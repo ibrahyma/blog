@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     state = {
         isLogin: false,
         navbarActive: false,
-        navbarStyle: { transform: "translateY(-300%)" },
+        navbarStyle: { transform: "translateY(-200%)" },
         menuIcon: "gg-menu"
     }
 
@@ -21,7 +21,7 @@ export default class Navbar extends Component {
 
         this.setState({
             navbarActive: !navbarActive,
-            navbarStyle: { transform: `translateY(${navbarActive ? "-300%" : "0"})` },
+            navbarStyle: { transform: `translateY(${navbarActive ? "-200%" : "0"})` },
             menuIcon: `gg-${navbarActive ? "menu" : "close"}`
         })
     }

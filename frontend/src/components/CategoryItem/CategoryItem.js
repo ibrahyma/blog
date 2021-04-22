@@ -41,13 +41,6 @@ export default class CategoryItem extends Component {
                     </div>
                 </a>
             </div>
-            // /* {/* <figure className="categoryItem">
-            //     <a className="itemLink" href={ itemLink }>
-            //         <figcaption className="itemCaption">{ title }</figcaption>
-            //         <img className="itemImage" src={ image || DEFAULT_IMAGE } alt={ title }/>
-            //         <figcaption className="itemCaption"></figcaption>
-            //     </a>
-            // </figure> */} */
         )
     }
 }

@@ -1,6 +1,30 @@
 .categoryList {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 10px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+}
+
+.categoryList::-webkit-scrollbar {
+    height: 10px;
+    background: transparent;
+    border: 1px solid #303030;
+    width: 1px;
+}
+
+.categoryList::-webkit-scrollbar-thumb {
+    width: 1px;
+    background: #303030;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {    
+    .pageTitle {
+        font-size: 34px;
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+    .pageTitle {
+        font-size: 40px;
+    }
 }
