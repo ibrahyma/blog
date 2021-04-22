@@ -1,0 +1,55 @@
+.entityItem {
+    transition: 0.3s;
+    width: 110px;
+    height: max-content;
+}
+
+.entityItem:not(:last-child) {
+    margin-right: 36px;
+}
+
+.entityItem img {
+    height: 110px;
+    width: 110px;
+}
+
+.itemContainer {
+    padding: 2px 16px;
+}
+
+.itemContainer p, .itemContainer h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    .entityItem {
+        width: 220px;
+    }
+
+    .entityItem:not(:last-child) {
+        margin-right: 73px;
+    }
+
+    .entityItem img {
+        height: 220px;
+        width: 220px;
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+    .entityItem {
+        width: 330px;
+    }
+
+    .entityItem:not(:last-child) {
+        margin-right: 110px;
+    }
+
+    .entityItem img {
+        height: 330px;
+        width: 330px;
+    }
+}

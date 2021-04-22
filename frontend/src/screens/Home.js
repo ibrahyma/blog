@@ -1,8 +1,8 @@
 import { Component } from "react"
-import CategoryList from "../../components/CategoryList/CategoryList"
-// import PostList from "../../components/PostList/PostList"
-import { getRessources } from "../../services/api_service"
-import './Home.css'
+import CategoryList from "../components/CategoryList"
+import PostList from "../components/PostList"
+import { getRessources } from "../services/api_service"
+import './style/Home.css'
 
 export default class Home extends Component {
     state = {
@@ -26,9 +26,9 @@ export default class Home extends Component {
 
     render() {
         return (
-            <section className="home">
+            <section className="home main">
                 <CategoryList/>
-                {/* <PostList/> */}
+                <PostList/>
             </section>
         )
     } 

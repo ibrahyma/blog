@@ -1,5 +1,8 @@
+@import url('https://css.gg/backspace.css');
 @import url('https://css.gg/close.css');
 @import url('https://css.gg/menu.css');
+@import url('https://css.gg/pen.css');
+@import url('https://css.gg/trash.css');
 
 body {
     background: black;
@@ -36,8 +39,24 @@ a:hover {
     height: 50vh;
 }
 
+.bg-danger {
+    background: red !important;
+}
+
+.bg-warning {
+    background: #FFA500 !important;
+}
+
+.buttonList {
+    align-items: center;
+    display: flex;
+}
+
+.buttonList Button:not(:first-child, :last-child) {
+    margin: 0 20px;
+}
+
 .footer {
-    bottom: 0;
     border-top: 1px solid #808080;
     align-items: center;
     display: flex;
@@ -52,6 +71,8 @@ a:hover {
 .itemLink {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .itemLink:active {
@@ -61,6 +82,22 @@ a:hover {
 .itemImage {
     height: 100%;
     width: 100%;
+}
+
+.gg-backspace {
+    position: relative;
+    right: -2px;
+}
+
+.logoButton {
+    background: #C0C0C0;
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    height: 20px;
+    width: 200px;
 }
 
 .menuTitle {
@@ -105,6 +142,33 @@ a:hover {
     padding-bottom: 3px;
 }
 
+.realButton {
+    align-items: center;
+    background: #C0C0C0;
+    color: black;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    transition: 0.5s;
+    width: 30px;
+}
+
+.realButton:active {
+    transform: scale(0.7);
+}
+
+.realButton:hover {
+    background: gray;
+}
+
+.txt-black {
+    color: black;
+}
+
+.txt-white {
+    color: white;
+}
+
 .warning {
     background: #FF8080;
     color: #402020;
@@ -117,7 +181,7 @@ a:hover {
     }
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1024px) {    
     .pageTitle {
         font-size: 40px;
     }

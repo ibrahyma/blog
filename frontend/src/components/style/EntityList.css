@@ -1,18 +1,18 @@
-.categoryList {
+.entityList {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
     padding-bottom: 10px;
 }
 
-.categoryList::-webkit-scrollbar {
+.entityList::-webkit-scrollbar {
     height: 10px;
     background: transparent;
     border: 1px solid #303030;
     width: 1px;
 }
 
-.categoryList::-webkit-scrollbar-thumb {
+.entityList::-webkit-scrollbar-thumb {
     width: 1px;
     background: #303030;
 }
@@ -24,10 +24,30 @@
 }
 
 @media only screen and (min-width : 1024px) {
-    .categoryList {
+    .entityList {
         padding-bottom: 50px;
     }
+    
     .pageTitle {
         font-size: 40px;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .entityList {
+        height: inherit;
+        overflow-x: scroll;
+    }
+
+    .entityList::-webkit-scrollbar {
+        height: 10px;
+        background: transparent;
+        border: 1px solid #303030;
+        width: 1px;
+    }
+    
+    .entityList::-webkit-scrollbar-thumb {
+        width: 1px;
+        background: #303030;
     }
 }

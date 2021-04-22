@@ -1,5 +1,5 @@
 import React from "react"
-import Button from "../components/Button/Button"
+import Button from "../components/Button"
 
 export default function Footer(props) {
     const mail = "missoma97@gmail.com"

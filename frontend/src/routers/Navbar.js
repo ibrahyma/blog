@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Button from "../components/Button/Button";
+import Button from "../components/Button";
 import { logout } from '../services/api_service'
 import { retrieveData, TOKENID } from "../services/localStorage";
 
@@ -9,6 +9,10 @@ export default class Navbar extends Component {
         navbarActive: false,
         navbarStyle: { transform: "translateY(-200%)" },
         menuIcon: "gg-menu"
+    }
+
+    componentDidMount() {
+        this.setState({ isLogin: retrieveData(TOKENID) ? true : false })
     }
 
     onLogout(e) {
@@ -24,10 +28,6 @@ export default class Navbar extends Component {
             navbarStyle: { transform: `translateY(${navbarActive ? "-200%" : "0"})` },
             menuIcon: `gg-${navbarActive ? "menu" : "close"}`
         })
-    }
-
-    componentDidMount() {
-        this.setState({ isLogin: retrieveData(TOKENID) ? true : false })
     }
 
     render() {

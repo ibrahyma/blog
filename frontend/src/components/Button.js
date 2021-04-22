@@ -1,5 +1,5 @@
-import './Button.css'
-import { BASE_CLIENT_URL } from "../../services/api_service";
+import './style/Button.css'
+import { BASE_CLIENT_URL } from "../services/api_service";
 
 export default function Button(props) {
     const { onClick, href, mailto, className } = props

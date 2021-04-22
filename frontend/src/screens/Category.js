@@ -1,7 +1,7 @@
 import { Component } from "react"
-import { getRessource } from "../../services/api_service"
-import '../Home/Home.css'
-import '../Category/Category.css'
+import { getRessource } from "../services/api_service"
+import './style/Home.css'
+import './style/Entity.css'
 
 export default class Category extends Component {
     state = {
@@ -28,13 +28,13 @@ export default class Category extends Component {
                 <h2 className="pageTitle">{ title || "Catégorie inexistante"}</h2>
                 {
                     title ?
-                        <div className="category">
-                            <div className="category__imageside">
+                        <div className="entity">
+                            <div className="entity__imageside">
                                 <img src={ image || DEFAULT_IMAGE } alt={ title }/>
                             </div>
-                            <p className="category__description">{ description }</p>
+                            <p className="entity__description">{ description }</p>
                         </div>
-                        : <p className="warning">Aucune catégorie trouvée.</p>
+                        : <p className="warning">Cette catégorie n'existe pas.</p>
                 }
             </section>
         )
