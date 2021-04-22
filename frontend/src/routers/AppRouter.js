@@ -9,6 +9,13 @@ export default function AppRouter(props) {
         <Router>
             <Navbar/>
             <Switch>
+                <Route path="/createCategory" children={ <Home/> }/>
+                <Route path="/createPost" children={ <Home/> }/>
+                <Route path="/editCategory/:id" children={ <Home/> }/>
+                <Route path="/editPost/:id" children={ <Home/> }/>
+                <Route path="/category/:id" children={ <Home/> }/>
+                <Route path="/post/:id" children={ <Home/> }/>
+                <Route path="/login" children={ <Home/> }/>
                 <Route path="/" children={ <Home/> }/>
             </Switch>
             <Footer/>
