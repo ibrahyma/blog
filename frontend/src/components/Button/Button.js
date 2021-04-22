@@ -2,13 +2,18 @@ import './Button.css'
 import { BASE_CLIENT_URL } from "../../services/api_service";
 
 export default function Button(props) {
-    const { onClick, href, className } = props
+    const { onClick, href, mailto, className } = props
 
     return (
         <button className={`button ${className}`}
             onClick={ () => {
                 if (onClick) {
                     onClick()
+                }
+
+                if (mailto) {
+                    window.open(`mailto:${mailto}`)
+                    return
                 }
 
                 if (href) {

@@ -2,7 +2,6 @@ import { Component } from "react";
 import Button from "../components/Button/Button";
 import { logout } from '../services/api_service'
 import { retrieveData, TOKENID } from "../services/localStorage";
-import './Navbar.css';
 
 export default class Navbar extends Component {
     state = {
@@ -35,23 +34,22 @@ export default class Navbar extends Component {
         const { isLogin, navbarStyle, menuIcon } = this.state
         
         return (
-            <div className="navbar">
-                <div className="navbar__header">
-                    <Button className={ menuIcon } onClick={ this.onToggleNavbar.bind(this) }></Button>
-                    <Button className="title" value="MyBlog" onClick={ this.onToggleNavbar.bind(this) }></Button>
+            <nav>
+                <div className="navbar__header" onClick={ this.onToggleNavbar.bind(this) }>
+                    <Button className={ menuIcon }></Button>
+                    <Button className="menuTitle" value="MyBlog"></Button>
                 </div>
                 <ul className="navbar__menu" style={ navbarStyle }>
-                    <li><Button value="Home" href={ `/${isLogin && "admin"}` }/></li>
-                    { isLogin || <li><Button value="Login" href="/login"/></li> }
+                    <li><Button value="Accueil" href={ `/${isLogin && "admin"}` }/></li>
                     {
-                        isLogin && [
-                            <li><Button value="New category" href="/createCategory"/></li>,
-                            <li><Button value="New post" href="/createPost"/></li>,
-                            <li><Button value="Logout" onClick={ this.onLogout.bind(this) }/></li>
-                        ]
+                        isLogin ? [
+                            <li><Button value="Nouvelle catégorie" href="/createCategory"/></li>,
+                            <li><Button value="Nouveau poste" href="/createPost"/></li>,
+                            <li><Button value="Déconnexion" onClick={ this.onLogout.bind(this) }/></li>
+                        ] : <li><Button value="Connexion" href="/login"/></li>
                     }
                 </ul>
-            </div>
+            </nav>
         )
     }
 }

@@ -4,22 +4,96 @@
 body {
     background: black;
     color: white;
+    display: flex;
+    flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.banner {
+    display: none;
+    width: 100%;
+    height: 50vh;
+}
+
 .footer {
-    background: #303030;
+    bottom: 0;
+    border-top: 1px solid #808080;
     align-items: center;
     display: flex;
+    font-size: 12px;
     justify-content: center;
-    height: 5vh;
+    height: 10vh;
     margin-top: 25px;
+    text-align: center;
     width: 100%;
 }
 
-.title {
+.itemImage {
+    height: 100%;
+    width: 100%;
+}
+
+.menuTitle {
     font-size: 25px; 
     font-weight: bold;
+}
+
+.navbar__header {
+    align-items: center;
+    background: #303030;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 5%;
+    position: relative;
+    z-index: 3;
+}
+
+.navbar__header .button:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar__menu {
+    background: #303030;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 5%;
+    transition: transform 750ms;
+    width: 90%;
+    z-index: 2;
+}
+
+.pageTitle::first-letter {
+    border-bottom: 5px solid #808080;
+    padding-bottom: 3px;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+
+    .itemImage {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+
+    .itemImage {
+        height: 200px;
+        width: 200px;
+    }
+
+    .pageTitle {
+        font-size: 40px;
+    }
 }

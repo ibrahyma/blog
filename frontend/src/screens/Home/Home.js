@@ -1,5 +1,8 @@
 import { Component } from "react"
-import { getRessources } from "../services/api_service"
+import CategoryList from "../../components/CategoryList/CategoryList"
+// import PostList from "../../components/PostList/PostList"
+import { getRessources } from "../../services/api_service"
+import './Home.css'
 
 export default class Home extends Component {
     state = {
@@ -22,7 +25,11 @@ export default class Home extends Component {
     }
 
     render() {
-        return [
-        ]
+        return (
+            <section className="home">
+                <CategoryList/>
+                {/* <PostList/> */}
+            </section>
+        )
     } 
 }
