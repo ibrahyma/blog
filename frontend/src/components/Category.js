@@ -7,7 +7,7 @@ export default function Category(props) {
     const { id } = useParams()
 
     switch (window.location.href) {
-        case `${BASE_CLIENT_URL}/editPost/${id}`:
+        case `${BASE_CLIENT_URL}/editCategory/${id}`:
             return <CategoryForm itemId={ id }/>
 
         case `${BASE_CLIENT_URL}/category/${id}`:
