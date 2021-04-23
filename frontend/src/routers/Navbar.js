@@ -37,16 +37,16 @@ export default class Navbar extends Component {
             <nav>
                 <div className="navbar__header" onClick={ this.onToggleNavbar.bind(this) }>
                     <Button className={ menuIcon }></Button>
-                    <Button className="menuTitle" value="MyBlog"></Button>
+                    <Button className="menuTitle" value="iSmartphoneBlog"></Button>
                 </div>
                 <ul className="navbar__menu" style={ navbarStyle }>
                     <li><Button value="Accueil" href={ `/${isLogin && "admin"}` }/></li>
                     {
                         isLogin ? [
-                            <li><Button value="Nouvelle catégorie" href="/createCategory"/></li>,
-                            <li><Button value="Nouveau poste" href="/createPost"/></li>,
-                            <li><Button value="Déconnexion" onClick={ this.onLogout.bind(this) }/></li>
-                        ] : <li><Button value="Connexion" href="/login"/></li>
+                            <li key="1"><Button value="Nouvelle catégorie" href="/createCategory"/></li>,
+                            <li key="2"><Button value="Nouveau post" href="/createPost"/></li>,
+                            <li key="3"><Button value="Déconnexion" onClick={ this.onLogout.bind(this) }/></li>
+                        ] : <li key="4"><Button value="Connexion" href="/login"/></li>
                     }
                 </ul>
             </nav>

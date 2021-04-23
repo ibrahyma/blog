@@ -5,7 +5,7 @@ import './style/Entity.css'
 import Button from "../components/Button"
 import { retrieveData, TOKENID } from "../services/localStorage"
 
-export default class Post extends Component {
+export default class PostPage extends Component {
     state = {
         post: {},
         isLogin: false

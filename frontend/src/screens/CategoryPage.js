@@ -5,7 +5,7 @@ import './style/Entity.css'
 import { retrieveData, TOKENID } from "../services/localStorage"
 import Button from "../components/Button"
 
-export default class Category extends Component {
+export default class CategoryPage extends Component {
     state = {
         category: {},
         isLogin: false

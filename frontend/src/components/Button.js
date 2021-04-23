@@ -17,12 +17,9 @@ export default function Button(props) {
                 }
 
                 if (href) {
-                    
-                    if (window.location.replace(BASE_CLIENT_URL, "") === href) {
-                        return
+                    if (window.location.href.replace(BASE_CLIENT_URL, "") !== href) {
+                        window.location = props.href
                     }
-                    
-                    window.location = props.href
                 }
             }}>{ props.value }</button>
     )

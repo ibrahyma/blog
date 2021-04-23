@@ -75,21 +75,27 @@ input, textarea, select {
     outline: 0;
 }
 
-.form__field label {
-    display: none;
+.form__field {
+    width: 90%;
 }
 
-.form__field label + * {
+.field__input {
+    max-width: 100%;
     padding: 10px;
+    transition: 0.5s;
     width: 100%;
 }
 
-.form__field label + *:focus {
+select.field__input {
+    width: fit-content;
+}
+
+.field__input:focus {
     background: #181818;
 }
 
-.form__field input[name="password"] {
-    margin: 20px 0;
+.form__field, .form__field .button {
+    margin: 10px 0 !important;
 }
 
 .itemLink {
@@ -127,6 +133,11 @@ input, textarea, select {
 .logoButton:active,
 .realButton:active {
     transform: scale(0.7);
+}
+
+.logoButton:focus,
+.realButton:focus {
+    background: #181818;
 }
 
 .logoButton:hover,
@@ -205,13 +216,17 @@ input, textarea, select {
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+    .field__input {
+        width: 75%;
+    }
+    
     .pageTitle {
         font-size: 34px;
     }
 }
 
 @media only screen and (min-width : 1024px) {    
-    .form__field label + * {
+    .field__input {
         width: 50%;
     }
     

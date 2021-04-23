@@ -46,16 +46,15 @@ export default class LoginForm extends Component {
 
         return (
             <form className="form home" method="POST" onSubmit={ this.connectUser.bind(this) }>
+                <h2 className="pageTitle">Connexion</h2>
                 <div className="form__field">
-                    <label for="username">Username</label>
-                    <input className="field__input" type="text" placeholder="username" name="username" value={ username } onChange={ this.onChange.bind(this) }/>
+                    <input className="field__input" type="text" placeholder="Nom d'utilisateur" name="username" value={ username } onChange={ this.onChange.bind(this) }/>
                 </div>
                 <div className="form__field">
-                    <label for="password">Password</label>
-                    <input type="password" placeholder="password" name="password" value={ password } onChange={ this.onChange.bind(this) }/>
+                    <input className="field__input" type="password" placeholder="Mot de passe" name="password" value={ password } onChange={ this.onChange.bind(this) }/>
                 </div>
                 <div className="form__field">
-                    <Button className="realButton" value="Login"/>
+                    <Button className="realButton" value="Connexion"/>
                 </div>
             </form>
         )
