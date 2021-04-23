@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { createRessource, deleteRessource, getRessource, updateRessource } from '../services/api_service'
 import { retrieveData, TOKENID } from "../services/localStorage";
-import Button from "./Button";
+import Button from "../components/Button";
 
 export default class CategoryForm extends Component {
     state = {
@@ -54,7 +54,6 @@ export default class CategoryForm extends Component {
         const { _id, title, image, description } = this.state
         
         return [
-            
             <form className="form home" onSubmit={ this.onSave.bind(this) }>
                 <div className="buttonList">
                     <Button className="logoButton" value={ <i className="gg-backspace"></i> } href={ `/category/${_id}` }></Button>

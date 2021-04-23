@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import CategoryPage from "../screens/CategoryPage";
 import { BASE_CLIENT_URL } from "../services/api_service";
-import CategoryForm from "./CategoryForm";
+import CategoryForm from "../screens/CategoryForm";
 
 export default function Category(props) {
     const { id } = useParams()

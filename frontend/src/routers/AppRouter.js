@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Category from '../components/Category';
-import CategoryForm from '../components/CategoryForm';
+import CategoryForm from '../screens/CategoryForm';
 import Post from '../components/Post';
 import Home from '../screens/Home'
 import LoginForm from '../screens/LoginForm';
