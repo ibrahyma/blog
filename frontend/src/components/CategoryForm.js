@@ -32,8 +32,6 @@ export default class CategoryForm extends Component {
                 .then(() => window.location = '/')
                 .catch(err => console.log("Error: ", err))
         }
-
-        e.preventDefault()
     }
 
     onSave(e) {
