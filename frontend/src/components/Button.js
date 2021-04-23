@@ -17,7 +17,8 @@ export default function Button(props) {
                 }
 
                 if (href) {
-                    if (window.location.replace(BASE_CLIENT_URL, "") !== href) {
+                    
+                    if (window.location.replace(BASE_CLIENT_URL, "") === href) {
                         return
                     }
                     

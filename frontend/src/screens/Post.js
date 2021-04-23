@@ -31,9 +31,9 @@ export default class Post extends Component {
         return (
             <section className="home">
                 <div className="buttonList">
-                    <Button className="realButton" value={ <i className="gg-backspace"></i> } href="/"></Button>
-                    { _id && isLogin && <Button className="realButton bg-warning" value={ <i className="gg-pen txt-black"></i> } href={ `/editPost/${_id}` }/> }
-                    { _id && isLogin && <Button className="realButton bg-danger" value={ <i className="gg-trash txt-white"></i> } href={ `/deletePost/${_id}` }/> }
+                    <Button className="logoButton" value={ <i className="gg-backspace"></i> } href="/"></Button>
+                    { _id && isLogin && <Button className="logoButton bg-warning" value={ <i className="gg-pen txt-black"></i> } href={ `/editPost/${_id}` }/> }
+                    { _id && isLogin && <Button className="logoButton bg-danger" value={ <i className="gg-trash txt-white"></i> } href={ `/deletePost/${_id}` }/> }
                 </div>
                 <h2 className="pageTitle">{ title || "Catégorie inexistante" }</h2>
                 { title_description && <h3 className="subtitle">{ title_description }</h3> }

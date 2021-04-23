@@ -68,6 +68,30 @@ a:hover {
     width: 100%;
 }
 
+input, textarea, select {
+    background: #303030;
+    border: 0;
+    color: white;
+    outline: 0;
+}
+
+.form__field label {
+    display: none;
+}
+
+.form__field label + * {
+    padding: 10px;
+    width: 100%;
+}
+
+.form__field label + *:focus {
+    background: #181818;
+}
+
+.form__field input[name="password"] {
+    margin: 20px 0;
+}
+
 .itemLink {
     display: flex;
     flex-direction: column;
@@ -90,14 +114,24 @@ a:hover {
 }
 
 .logoButton {
+    align-items: center;
     background: #C0C0C0;
     color: black;
-    font-size: 12px;
-    padding: 10px;
-    text-transform: uppercase;
+    display: flex;
+    height: 30px;
+    justify-content: center;
     transition: 0.5s;
-    height: 20px;
-    width: 200px;
+    width: 30px;
+}
+
+.logoButton:active,
+.realButton:active {
+    transform: scale(0.7);
+}
+
+.logoButton:hover,
+.realButton:hover {
+    background: gray;
 }
 
 .menuTitle {
@@ -144,21 +178,16 @@ a:hover {
 
 .realButton {
     align-items: center;
-    background: #C0C0C0;
-    color: black;
+    background: #303030;
+    color: white;
     display: flex;
-    height: 30px;
+    font-weight: bold;
     justify-content: center;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
     transition: 0.5s;
-    width: 30px;
-}
-
-.realButton:active {
-    transform: scale(0.7);
-}
-
-.realButton:hover {
-    background: gray;
+    width: fit-content;
 }
 
 .txt-black {
@@ -182,6 +211,10 @@ a:hover {
 }
 
 @media only screen and (min-width : 1024px) {    
+    .form__field label + * {
+        width: 50%;
+    }
+    
     .pageTitle {
         font-size: 40px;
     }
